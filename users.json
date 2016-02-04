@@ -3,144 +3,281 @@
     "id": 1,
     "level": 1,
     "position": "head",
+    "subordinates": [2,3],
     "isRise": true
   },
   {
     "id": 2,
     "level": 2,
     "position": "head's assistant",
+    "parentId": 1,
+    "subordinates": [4,5,6],
     "isRise": true
   },
   {
     "id": 3,
     "level": 2,
     "position": "head's assistant",
+    "parentId": 1,
+    "subordinates": [7,8,9],
     "isRise": true
   },
   {
     "id": 4,
     "level": 3,
     "position": "contractor",
+    "parentId": 2,
+    "subordinates": [10,11,12,13,14],
     "isRise": false
   },
   {
     "id": 5,
     "level": 3,
     "position": "contractor",
+    "parentId": 2,
+    "subordinates": [15,16,17,18,19],
     "isRise": false
   },
   {
     "id": 6,
     "level": 3,
     "position": "contractor",
+    "parentId": 2,
+    "subordinates": [20,21,22,23,24],
     "isRise": false
   },
   {
     "id": 7,
     "level": 3,
     "position": "contractor",
+    "parentId": 3,
+    "subordinates": [25,26,27,28,29],
     "isRise": false
   },
   {
     "id": 8,
     "level": 3,
     "position": "contractor",
+    "parentId": 3,
+    "subordinates": [30,31,32,33,34],
     "isRise": false
   },
   {
     "id": 9,
     "level": 3,
     "position": "contractor",
+    "parentId": 3,
+    "subordinates": [35,36,37,38,39],
     "isRise": false
   },
   {
     "id": 10,
     "level": 4,
     "position": "courier",
+    "parentId": 4,
     "isRise": false
   },
   {
     "id": 11,
     "level": 4,
     "position": "courier",
+    "parentId": 4,
     "isRise": false
   },
   {
     "id": 12,
     "level": 4,
     "position": "courier",
+    "parentId": 4,
     "isRise": false
   },
   {
     "id": 13,
     "level": 4,
     "position": "courier",
+    "parentId": 4,
     "isRise": false
   },
   {
     "id": 14,
     "level": 4,
     "position": "courier",
+    "parentId": 4,
     "isRise": false
   },
   {
     "id": 15,
     "level": 4,
     "position": "courier",
+    "parentId": 5,
     "isRise": false
   },
   {
     "id": 16,
     "level": 4,
     "position": "courier",
+    "parentId": 5,
     "isRise": false
   },
   {
     "id": 17,
     "level": 4,
     "position": "courier",
+    "parentId": 5,
     "isRise": false
   },
   {
     "id": 18,
     "level": 4,
     "position": "courier",
+    "parentId": 5,
     "isRise": false
   },
   {
     "id": 19,
     "level": 4,
     "position": "courier",
+    "parentId": 5,
     "isRise": false
   },
   {
     "id": 20,
     "level": 4,
     "position": "courier",
+    "parentId": 6,
     "isRise": false
   },
   {
     "id": 21,
     "level": 4,
     "position": "courier",
+    "parentId": 6,
     "isRise": false
   },
   {
     "id": 22,
     "level": 4,
     "position": "courier",
+    "parentId": 6,
     "isRise": false
   },
   {
     "id": 23,
     "level": 4,
     "position": "courier",
+    "parentId": 6,
     "isRise": false
   },
   {
     "id": 24,
     "level": 4,
     "position": "courier",
+    "parentId": 6,
+    "isRise": false
+  },
+  {
+    "id": 25,
+    "level": 4,
+    "position": "courier",
+    "parentId": 7,
+    "isRise": false
+  },
+  {
+    "id": 26,
+    "level": 4,
+    "position": "courier",
+    "parentId": 7,
+    "isRise": false
+  },
+  {
+    "id": 27,
+    "level": 4,
+    "position": "courier",
+    "parentId": 7,
+    "isRise": false
+  },
+  {
+    "id": 28,
+    "level": 4,
+    "position": "courier",
+    "parentId": 7,
+    "isRise": false
+  },
+  {
+    "id": 29,
+    "level": 4,
+    "position": "courier",
+    "parentId": 7,
+    "isRise": false
+  },
+  {
+    "id": 30,
+    "level": 4,
+    "position": "courier",
+    "parentId": 8,
+    "isRise": false
+  },
+  {
+    "id": 31,
+    "level": 4,
+    "position": "courier",
+    "parentId": 8,
+    "isRise": false
+  },
+  {
+    "id": 32,
+    "level": 4,
+    "position": "courier",
+    "parentId": 8,
+    "isRise": false
+  },
+  {
+    "id": 33,
+    "level": 4,
+    "position": "courier",
+    "parentId": 8,
+    "isRise": false
+  },
+  {
+    "id": 34,
+    "level": 4,
+    "position": "courier",
+    "parentId": 8,
+    "isRise": false
+  },
+  {
+    "id": 35,
+    "level": 4,
+    "position": "courier",
+    "parentId": 9,
+    "isRise": false
+  },
+  {
+    "id": 36,
+    "level": 4,
+    "position": "courier",
+    "parentId": 9,
+    "isRise": false
+  },
+  {
+    "id": 37,
+    "level": 4,
+    "position": "courier",
+    "parentId": 9,
+    "isRise": false
+  },
+  {
+    "id": 38,
+    "level": 4,
+    "position": "courier",
+    "parentId": 9,
+    "isRise": false
+  },
+  {
+    "id": 39,
+    "level": 4,
+    "position": "courier",
+    "parentId": 9,
     "isRise": false
   }
 ]

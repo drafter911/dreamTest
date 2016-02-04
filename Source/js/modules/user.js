@@ -1,7 +1,4 @@
 function User(){
-    //function alet() {
-    //    alert('1');
-    //}
 }
 
 User.prototype.alet = function() {
