@@ -57,32 +57,27 @@
 	    var users = data;
 	    var $el = document.getElementById("main");
 	    for (var k in users) {
-	        //$el.innerHTML = $el.innerHTML + '<li id="'+users[k].id+'">' + users[k].position + '</li>';
-	        if (users[k].hasOwnProperty("subordinates")) {
-	            var subordinates = filterUsers(users, users[k].subordinates, users[k].id);
 
-	            $el.innerHTML = $el.innerHTML + "<li id=\"" + users[k].id + "\">" + users[k].position + " (id: " + users[k].id + ")" + createSubusersString(filterUsers(users, users[k].subordinates, users[k].id)) + "</li>";
+	        if (users[k].hasOwnProperty("subordinates")) {
+	            //var subordinates = filterUsers(users,  users[k].id);
+	            var subordinates = filterUsers(users, users[k].subordinates);
+
+	            $el.innerHTML += "<li id=\"" + users[k].id + "\">" + users[k].position + " (id: " + users[k].id + ")" + "<ul>" + subordinates + "</ul></li>";
+	            //$el = document.getElementById(users[k].id);
 	        }
-	        //else {
-	        //    $el.innerHTML = $el.innerHTML + '<li id="' + users[k].id + '">'
-	        //        + users[k].position + ' (id: ' + users[k].id + ')' + '</li>';
-	        //}
-	        //console.log(filterUsers(users, users[k].subordinates, users[k].id));
 	    }
 	    console.log(users);
 	}
 
-	function filterUsers(users, idArray, id) {
-	    var result = {
-	        subordinates: [],
-	        subordinatesNumbers: []
-	    };
+	function filterUsers(users, idArray) {
+	    var result = "";
 
-	    for (var k in users) {
-	        if (users[k].hasOwnProperty("parentId")) {
-	            if (users[k].parentId === id) {
-	                result.subordinates.push(users[k]);
-	                result.subordinatesNumbers.push(k);
+	    for (var k = 0; k < users.length; k++) {
+	        for (var l = 0; l < idArray.length; l++) {
+	            if (users[k].hasOwnProperty("id")) {
+	                if (users[k].id === idArray[l]) {
+	                    result += "<li id=\"" + users[k].id + "\">" + users[k].position + users[k].id + "</li>";
+	                }
 	            }
 	        }
 	    }
