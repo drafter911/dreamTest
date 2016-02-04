@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "level": 1,
+    "position": "head",
+    "isRise": true
+  },
+  {
+    "id": 2,
+    "level": 2,
+    "position": "head's assistant",
+    "isRise": true
+  },
+  {
+    "id": 3,
+    "level": 2,
+    "position": "head's assistant",
+    "isRise": true
+  },
+  {
+    "id": 4,
+    "level": 3,
+    "position": "contractor",
+    "isRise": false
+  },
+  {
+    "id": 5,
+    "level": 3,
+    "position": "contractor",
+    "isRise": false
+  },
+  {
+    "id": 6,
+    "level": 3,
+    "position": "contractor",
+    "isRise": false
+  },
+  {
+    "id": 7,
+    "level": 3,
+    "position": "contractor",
+    "isRise": false
+  },
+  {
+    "id": 8,
+    "level": 3,
+    "position": "contractor",
+    "isRise": false
+  },
+  {
+    "id": 9,
+    "level": 3,
+    "position": "contractor",
+    "isRise": false
+  },
+  {
+    "id": 10,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 11,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 12,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 13,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 14,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 15,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 16,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 17,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 18,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 19,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 20,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 21,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 22,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 23,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  },
+  {
+    "id": 24,
+    "level": 4,
+    "position": "courier",
+    "isRise": false
+  }
+]
