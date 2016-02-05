@@ -1,6 +1,6 @@
 To start project open your terminal and run next commands:
 
-cd <project_root>
+cd 'projectRootDirectory'
 npm install
 npm start
 
