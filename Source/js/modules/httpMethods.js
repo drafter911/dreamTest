@@ -2,38 +2,28 @@ function HttpMethods() {
 }
 
 HttpMethods.prototype.getUsers = function (func) {
-    var data_file = "/users";
-    var httpRequest = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
 
-    try {
-        // Opera 8.0+, Firefox, Chrome, Safari
-        httpRequest = new XMLHttpRequest();
-    } catch (e) {
-        // Internet Explorer Browsers
-        try {
-            httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+    xhttp.open("GET", "/users", true);
+    xhttp.send();
+    xhttp.onreadystatechange = function () {
 
-        } catch (e) {
-
-            try {
-                httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-            } catch (e) {
-                // Something went wrong
-                alert("Your browser broke!");
-                return false;
-            }
+        if (xhttp.readyState == 4) {
+            func(JSON.parse(xhttp.responseText));
 
         }
-    }
+    };
+};
 
-    httpRequest.open("GET", data_file, true);
+HttpMethods.prototype.changeUsers = function (func, data) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/users", true);
+    xhttp.setRequestHeader("Content-type", "application/json; charset=utf-8");
+    xhttp.send(data);
+    xhttp.onreadystatechange = function () {
 
-    httpRequest.send();
-
-    httpRequest.onreadystatechange = function () {
-
-        if (httpRequest.readyState == 4) {
-            func(JSON.parse(httpRequest.responseText));
+        if (xhttp.readyState == 4) {
+            func(JSON.parse(xhttp.responseText));
 
         }
     };
