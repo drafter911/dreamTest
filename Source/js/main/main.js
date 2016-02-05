@@ -15,19 +15,43 @@ function renderUserList(data) {
 function renderUsers(users, $el) {
     for (var k in users) {
         var user = users[k];
-        renderUser(user, $el);
-        if(user.hasOwnProperty('subordinates')){
-            document.getElementById(user.id).innerHTML += '<ul id="'+ user.id + 'UL"'+ '></ul>';
+        if (!user.hasOwnProperty('parentId')) {
+            renderUser(user, $el);
+            addListParentElem(user.id);
             $el = document.getElementById(user.id + 'UL');
-            for(var l in user.subordinates){
-                for(var j in users){
-                    if(users[j].id == user.subordinates[l]){
-                        renderUser(users[j], $el);
+            var parentId = user.id;
+            for (var j in users) {
+                user = users[j];
+                if (user.hasOwnProperty('parentId')) {
+                    if (user.parentId === parentId) {
+                        renderUser(user, $el);
+                        addListParentElem(user.id);
+                        var $el2 = document.getElementById(user.id + 'UL');
+                        var parentId2 = user.id;
+                        for (var i in users) {
+                            user = users[i];
+                            if (user.hasOwnProperty('parentId')) {
+                                if (user.parentId === parentId2) {
+                                    renderUser(user, $el2);
+                                    addListParentElem(user.id);
+                                    var $el3 = document.getElementById(user.id + 'UL');
+                                    var parentId3 = user.id;
+                                    for (var m in users) {
+                                        user = users[m];
+                                        if (user.hasOwnProperty('parentId')) {
+                                            if (user.parentId === parentId3) {
+                                                renderUser(user, $el3);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
-            //renderUsers(users);
         }
+
     }
 }
 
@@ -39,26 +63,6 @@ function renderUser(obj, parent) {
     parent.appendChild(node);
 }
 
-function filterUsers(users, idArray) {
-    var result = '';
-
-    for (var k = 0; k < users.length; k++) {
-        for(var l = 0; l < idArray.length; l++) {
-            if (users[k].hasOwnProperty('id')) {
-                if (users[k].id === idArray[l]) {
-                    result += '<li id="' + users[k].id + '">' + users[k].position + users[k].id + '</li>';
-                }
-            }
-        }
-    }
-    return result;
-}
-
-function createSubusersString(subUsers) {
-    var users = subUsers.subordinates;
-    var result = '';
-    for (var k in users) {
-        result += '<li>' + users[k].position + '</li>';
-    }
-    return '<ul>' + result + '</ul>';
+function addListParentElem(id){
+    document.getElementById(id).innerHTML += '<ul id="'+ id + 'UL"></ul>';
 }
