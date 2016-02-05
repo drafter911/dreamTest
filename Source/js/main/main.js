@@ -8,19 +8,35 @@ httpMethods.getUsers(renderUserList);
 function renderUserList(data) {
     var users = data;
     var $el = document.getElementById('main');
+    renderUsers(users, $el);
+    console.log(users);
+}
+
+function renderUsers(users, $el) {
     for (var k in users) {
-
-        if (users[k].hasOwnProperty('subordinates')) {
-            //var subordinates = filterUsers(users,  users[k].id);
-            var subordinates = filterUsers(users,  users[k].subordinates);
-
-            $el.innerHTML += '<li id="' + users[k].id + '">'
-                + users[k].position + ' (id: ' + users[k].id + ')' + '<ul>' +
-                subordinates + '</ul></li>';
-            //$el = document.getElementById(users[k].id);
+        var user = users[k];
+        renderUser(user, $el);
+        if(user.hasOwnProperty('subordinates')){
+            document.getElementById(user.id).innerHTML += '<ul id="'+ user.id + 'UL"'+ '></ul>';
+            $el = document.getElementById(user.id + 'UL');
+            for(var l in user.subordinates){
+                for(var j in users){
+                    if(users[j].id == user.subordinates[l]){
+                        renderUser(users[j], $el);
+                    }
+                }
+            }
+            //renderUsers(users);
         }
     }
-    console.log(users);
+}
+
+function renderUser(obj, parent) {
+    var node = document.createElement('li');
+    var textNode = document.createTextNode(obj.position + '(' + obj.id + ')');
+    node.id = obj.id;
+    node.appendChild(textNode);
+    parent.appendChild(node);
 }
 
 function filterUsers(users, idArray) {
@@ -46,11 +62,3 @@ function createSubusersString(subUsers) {
     }
     return '<ul>' + result + '</ul>';
 }
-
-//
-//document.getElementById("fat").onclick = function () {
-//    require(["./Fattyfier"], function (Fattyfier) {
-//        var fattyfier = new Fattyfier("text");
-//        fattyfier.fat();
-//    });
-//}
